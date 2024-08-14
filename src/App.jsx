@@ -7,7 +7,8 @@ const App = () => {
   return (
     <>
       <Header />
-      <div className="container mx-auto">
+      {/* <div className="container mx-auto"> */}
+      <div className="flex flex-col justify-center items-center">
         <Hero />
         <TaskBoard />
       </div>
