@@ -11,8 +11,8 @@ const TaskBoard = () => {
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod laudantium laborum qui illum velit officiis nesciunt quia praesentium dolorum reiciendis!",
     tags: ["Web", "react", "javaScript"],
-    priority: "High",
-    isFav: false,
+    priority: "Low",
+    isFav: true,
   };
 
   const [tasks, setTasks] = useState([defultTask]);
