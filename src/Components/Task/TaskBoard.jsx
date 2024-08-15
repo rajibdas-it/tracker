@@ -7,12 +7,12 @@ import TaskList from "./TaskList";
 const TaskBoard = () => {
   const defultTask = {
     id: crypto.randomUUID(),
-    title: "Learn React",
+    title: "Learn React Native",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod laudantium laborum qui illum velit officiis nesciunt quia praesentium dolorum reiciendis!",
     tags: ["Web", "react", "javaScript"],
-    priority: "Low",
-    isFav: true,
+    priority: "High",
+    isFavorite: true,
   };
 
   const [tasks, setTasks] = useState([defultTask]);
