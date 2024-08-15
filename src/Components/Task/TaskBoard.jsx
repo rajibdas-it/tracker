@@ -7,7 +7,7 @@ import TaskList from "./TaskList";
 const TaskBoard = () => {
   const defultTask = {
     id: crypto.randomUUID(),
-    title: "Learn React Native",
+    title: "Learn React",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod laudantium laborum qui illum velit officiis nesciunt quia praesentium dolorum reiciendis!",
     tags: ["Web", "react", "javaScript"],
