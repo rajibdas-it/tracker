@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import SearchBox from "./SearchBox";
 import TaskActions from "./TaskActions";
@@ -70,6 +69,14 @@ const TaskBoard = () => {
     setTasks(newTasks);
   };
 
+  const handleSearch = (value) => {
+    const filteredTask = tasks.filter((task) =>
+      task.title.toLowerCase().includes(value.toLowerCase())
+    );
+
+    setTasks([...filteredTask]);
+  };
+
   return (
     <section className="mb-20" id="tasks">
       {showModal && (
@@ -81,7 +88,7 @@ const TaskBoard = () => {
       )}
       <div className="container">
         <div className="p-2 flex justify-end">
-          <SearchBox />
+          <SearchBox onTaskSearch={handleSearch} />
         </div>
 
         <div className="rounded-xl border border-[rgba(151,114,114,0.12)] bg-[#1D212B] px-6 py-8 md:px-9 md:py-16">
@@ -89,12 +96,16 @@ const TaskBoard = () => {
             onAddClick={() => setShowModal(true)}
             onDeleteAllTask={handleDeleteAllTask}
           />
-          <TaskList
-            tasks={tasks}
-            onEdit={handleEditTask}
-            onDeleteTask={handleDeleteTask}
-            onFav={handleFavTask}
-          />
+          {tasks.length > 0 ? (
+            <TaskList
+              tasks={tasks}
+              onEdit={handleEditTask}
+              onDeleteTask={handleDeleteTask}
+              onFav={handleFavTask}
+            />
+          ) : (
+            "No Task Founds"
+          )}
         </div>
       </div>
     </section>
