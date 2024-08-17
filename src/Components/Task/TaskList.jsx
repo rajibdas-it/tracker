@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import { FaStar } from "react-icons/fa";
 const TaskList = ({ tasks }) => {
-  // console.log(tasks);
   return (
     <div className="overflow-auto">
       <table className="table-fixed overflow-auto xl:w-full">
@@ -37,7 +36,11 @@ const TaskList = ({ tasks }) => {
               key={task.id}
             >
               <td>
-                {task.isFavorite ? <FaStar color="yellow" /> : <FaStar />}
+                {task.isFavorite ? (
+                  <FaStar color="yellow" />
+                ) : (
+                  <FaStar color="gray" />
+                )}
               </td>
               <td>{task.title}</td>
               <td>
